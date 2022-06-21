@@ -102,4 +102,4 @@ def home():
 
 
 if __name__ == '__main__':
-    application.run(debug=True) # debug = False, in production
+    application.run(host="0.0.0.0", debug=True) # debug = False, in production
