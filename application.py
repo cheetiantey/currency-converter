@@ -4,9 +4,9 @@ from flask import Flask, render_template, request, redirect, url_for
 import json
 from urllib.request import urlopen
 import sys
-from datetime import datime
+from datetime import datetime
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 # ** ---------------------------------------------------- ** #
 
@@ -70,8 +70,8 @@ for key, value in countries_data['results'].items():
     infos[curr_id] = curr_name
     
 
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/home', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
+@application.route('/home', methods=['GET', 'POST'])
 def home():
     result = 0
     rate = 0
@@ -102,4 +102,4 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run(debug=True) # debug = False, in production
+    application.run(debug=True) # debug = False, in production
